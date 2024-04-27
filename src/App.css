@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  background-image: url("./assets/background.jpg");
+  background-size: contain;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  height: 500px;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 10px;
+  padding: 15px;
+}
+
+.form h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.input {
+  text-indent: 5px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  outline: 1px solid gray;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: darkblue;
+}
+
+.signIn {
+  color: blue;
+}
+
+/* NotFound.css */
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.not-found h1 {
+  font-size: 3em;
+}
+
+.not-found p {
+  font-size: 2em;
+}
+
+.not-found img {
+  width: 500px;
+}
+.success{
+  background-color: green;
+  color: white;
+  padding: 12px;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: capitalize;
+  opacity: 1;
+}
+
+.invisible-msg{
+  padding: 12px;
+  border-radius: 5px;
+  opacity: 0;
+}
+.success{
+  background-color: red;
+  color: white;
+  padding: 12px;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: capitalize;
+  opacity: 1;
+}
