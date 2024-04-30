@@ -1,8 +1,9 @@
 import { useState, useContext } from "react";
 import Header from "./Header";
 import { UserContext } from "../contexts/UserContext";
+import Food from "./Food";
 
-const Food = () => {
+const Track = () => {
   let [foodItems, setFoodItems] = useState([]);
   let [searchedFood, setSearchedFood] = useState(null);
   const loggedInData = useContext(UserContext);
@@ -13,58 +14,60 @@ const Food = () => {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${loggedInData.loggedIn.token}`,
+          Authorization: `Bearer ${loggedInData.loggedIn.token}`,
         },
       })
         .then((res) => res.json())
         .then((data) => {
-         // console.log(data);
-         if(!data.message){
-          setFoodItems(data);
-         }else{
-          setFoodItems([]);
-         }
+          // console.log(data);
+          if (!data.message) {
+            setFoodItems(data);
+          } else {
+            setFoodItems([]);
+          }
         })
         .catch((err) => {
           console.log(err);
         });
-    }
-    else{
+    } else {
       //if search bar is empty, set foodItems to empty array
       setFoodItems([]);
-      
     }
   }
   return (
-    <div>
+    <>
       <Header />
       <div className="container input-container">
-        <input
-          className="search"
-          type="search"
-          name="food"
-          onChange={searchFood}
-          placeholder="Search your food"
-        />
-        {foodItems.length !== 0 ? (
-          <div className="search-results">
-            {foodItems.map((food) => {
-              return (
-                <div key={food._id} className="food-item">
-                  <h3 onClick={
-                    ()=>{
-                      setSearchedFood(food);
-                      console.log(searchedFood)
-                    }
-                  }>{food.name}</h3>
-                </div>
-              );
-            })}
-          </div>
-        ) : null}
+        <div className="search">
+          <input
+            type="search"
+            name="food"
+            onChange={searchFood}
+            placeholder="Search your food"
+          />
+          {foodItems.length !== 0 ? (
+            <div className="search-results">
+              {foodItems.map((food) => {
+                return (
+                  <div key={food._id} className="food-item">
+                    <h3
+                      onClick={() => {
+                        setSearchedFood(food);
+                        console.log(searchedFood);
+                      }}
+                    >
+                      {food.name}
+                    </h3>
+                  </div>
+                );
+              })}
+            </div>
+          ) : null}
+          {searchedFood !== null ? <Food food={searchedFood}/> : null}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
-export default Food;
+export default Track;
