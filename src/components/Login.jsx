@@ -1,9 +1,9 @@
 import { useState, useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 const Login = () => {
   const loggedInData = useContext(UserContext);
-  const navigate = useNavigate();
 
   const [userCred, setUserCred] = useState({
     username: "",
@@ -22,9 +22,10 @@ const Login = () => {
       };
     });
   }
+
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("http://localhost:5000/login", {
+     fetch("http://localhost:5000/login", {
       method: "POST",
       body: JSON.stringify(userCred),
       headers: {
@@ -32,7 +33,6 @@ const Login = () => {
       },
     })
       .then((res) => {
-        // console.log(res);
         if (res.status === 404) {
           setMessage({
             type: "error",
@@ -51,11 +51,9 @@ const Login = () => {
         return res.json();
       })
       .then((data) => {
-        //console.log(data);
         if (data.token !== undefined) {
           localStorage.setItem("userData", JSON.stringify(data));
           loggedInData.setLoggedIn(data);
-          navigate("/track");
         }
       })
       .catch((err) => {
