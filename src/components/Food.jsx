@@ -44,7 +44,7 @@ const Food = (props) => {
       quantity:eatenQuantity
     }
     // console.log(track);
-    fetch(`https://nutrition-app-dpud.onrender.com/track`, {
+    fetch(`https://nutrition-app-production-1e70.up.railway.app/track`, {
       method:"POST",
       body:JSON.stringify(trackedFoodItem),
       headers:{

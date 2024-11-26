@@ -28,7 +28,7 @@ const Register = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`https://nutrition-app-dpud.onrender.com/register`, {
+    fetch(`https://nutrition-app-production-1e70.up.railway.app/register`, {
       method: "POST",
       body: JSON.stringify(userData),
       headers: {
