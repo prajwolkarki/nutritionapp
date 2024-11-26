@@ -25,7 +25,7 @@ const Login = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-     fetch(`${apiUrl}/login`, {
+     fetch(`https://nutrition-app-dpud.onrender.com/login`, {
       method: "POST",
       body: JSON.stringify(userCred),
       headers: {

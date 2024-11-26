@@ -20,7 +20,7 @@ export default function Diet() {
 
   useEffect(() => {
     fetch(
-      `${apiUrl}/track/${loggedInData.loggedIn.userId}/${
+      `https://nutrition-app-dpud.onrender.com/track/${loggedInData.loggedIn.userId}/${
         date.getMonth() + 1
       }-${date.getDate()}-${date.getFullYear()}`,
       {

@@ -44,7 +44,7 @@ const Food = (props) => {
       quantity:eatenQuantity
     }
     // console.log(track);
-    fetch(`${apiUrl}/track`, {
+    fetch(`https://nutrition-app-dpud.onrender.com/track`, {
       method:"POST",
       body:JSON.stringify(trackedFoodItem),
       headers:{

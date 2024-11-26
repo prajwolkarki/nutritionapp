@@ -11,7 +11,7 @@ const Track = () => {
   function searchFood(e) {
     // console.log(e.target.value);
     if (e.target.value !== "") {
-      fetch(`${apiUrl}/foods/${e.target.value}`, {
+      fetch(`https://nutrition-app-dpud.onrender.com/foods/${e.target.value}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

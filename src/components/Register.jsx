@@ -28,7 +28,7 @@ const Register = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`${apiUrl}/register`, {
+    fetch(`https://nutrition-app-dpud.onrender.com/register`, {
       method: "POST",
       body: JSON.stringify(userData),
       headers: {
