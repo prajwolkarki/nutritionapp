@@ -27,7 +27,12 @@ a {
   justify-content: center;
   row-gap: 10px;
   padding: 15px;
+  border: 2px solid #ccc; /* Light gray border */
+  border-radius: 10px; /* Slightly rounded corners */
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  background: #fff; /* Ensures good contrast */
 }
+
 
 .form h1 {
   font-size: 2rem;
