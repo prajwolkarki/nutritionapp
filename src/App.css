@@ -32,7 +32,9 @@ a {
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
   background: #fff; /* Ensures good contrast */
 }
-
+.below{
+  text:white;
+}
 
 .form h1 {
   font-size: 2rem;
