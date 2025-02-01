@@ -11,7 +11,7 @@ a {
 .container {
   height: 100vh;
   width: 100%;
-  background-image: url("./assets/background.jpg");
+  background: linear-gradient(135deg, #ff7eb3 0%, #ff758c 50%, #ff7eb3 100%);
   background-size: contain;
   color: white;
   display: flex;
